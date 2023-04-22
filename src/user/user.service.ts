@@ -14,7 +14,7 @@ export class UserService {
   }
 
   async createManyUsers(createUserDtos: CreateUserDto[]) {
-    return  this.userModel.insertMany(createUserDtos)
+    return this.userModel.insertMany(createUserDtos);
   }
 
   async getAllUsers(): Promise<IUser[]> {
@@ -44,5 +44,4 @@ export class UserService {
   async deleteAll() {
     return this.userModel.deleteMany();
   }
-
 }

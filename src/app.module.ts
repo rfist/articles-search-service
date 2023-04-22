@@ -11,7 +11,7 @@ import { CommentSchema } from './schema/comment.schema';
 import { CommentService } from './comment/comment.service';
 import { CommentController } from './comment/comment.controller';
 import { TypesenseService } from './typesense/typesense.service';
-import { ContentController } from "./content/content.controller";
+import { ContentController } from './content/content.controller';
 
 @Module({
   imports: [
@@ -32,7 +32,12 @@ import { ContentController } from "./content/content.controller";
       { name: 'Comment', schema: CommentSchema },
     ]),
   ],
-  controllers: [UserController, ArticleController, CommentController, ContentController],
+  controllers: [
+    UserController,
+    ArticleController,
+    CommentController,
+    ContentController,
+  ],
   providers: [UserService, ArticleService, CommentService, TypesenseService],
 })
 export class AppModule {}

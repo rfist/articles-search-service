@@ -20,8 +20,12 @@ export class ArticleService {
   }
 
   async createManyArticles(createArticleDtos: CreateArticleDto[]) {
-    Promise.all(createArticleDtos.map(this.typesenseService.addToIndex.bind(this.typesenseService)))
-    return this.articleModel.insertMany(createArticleDtos)
+    Promise.all(
+      createArticleDtos.map(
+        this.typesenseService.addToIndex.bind(this.typesenseService),
+      ),
+    );
+    return this.articleModel.insertMany(createArticleDtos);
   }
 
   async getAllArticles(): Promise<IArticle[]> {
@@ -55,5 +59,4 @@ export class ArticleService {
   async deleteAll() {
     return this.articleModel.deleteMany();
   }
-
 }
