@@ -1,0 +1,40 @@
+### Add user
+POST http://localhost:3000/user
+Content-Type: application/json
+
+{
+  "firstName": "Jake",
+  "lastName": "Peralta",
+  "email": "notyouraveragecop@yahoo.com"
+}
+
+### Get all users
+http://localhost:3000/user
+Content-Type: application/json
+
+### Add article
+POST http://localhost:3000/article
+Content-Type: application/json
+
+{
+  "title": "test article",
+  "body": "hello Ipsum hello is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries",
+  "author": "64444fb5738b09d8206c55e0"
+}
+
+### Add article #2
+POST http://localhost:3000/article
+Content-Type: application/json
+
+{
+  "title": "random article",
+  "body": "Made last it seen went no just when of by. Occasional entreaties comparison me difficulty so themselves. At brother inquiry of offices without do my service. As particular to companions at sentiments. Weather however luckily enquire so certain do. Aware did stood was day under ask. Dearest affixed enquire on explain opinion he. Reached who the mrs joy offices pleased. Towards did colonel article any parties. Up is opinion message manners correct hearing husband my. Disposing commanded dashwoods cordially depending at at. Its strangers who you certainty earnestly resources suffering she. Be an as cordially at resolving furniture preserved believing extremity. Easy mr pain felt in. Too northward affection additions nay. He no an nature ye talent houses wisdom vanity denied. Arrival entered an if drawing request. How daughters not promotion few knowledge contented. Yet winter law behind number stairs garret excuse. Minuter we natural conduct gravity if pointed oh no. Am immediate unwilling of attempted admitting disposing it. Handsome opinions on am at it ladyship. Old education him departure any arranging one prevailed. Their end whole might began her. Behaved the comfort another fifteen eat. Partiality had his themselves ask pianoforte increasing discovered. So mr delay at since place whole above miles. He to observe conduct at detract because. Way ham unwilling not breakfast furniture explained perpetual. Or mr surrounded conviction so astonished literature. Songs to an blush woman be sorry young. We certain as removal attempt.",
+  "author": "64444fb5738b09d8206c55e0"
+}
+
+### Get all articles
+http://localhost:3000/article
+Content-Type: application/json
+
+### Delete article
+DELETE http://localhost:3000/article/6443c468eb2b615b73712da6
