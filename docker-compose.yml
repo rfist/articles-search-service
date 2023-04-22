@@ -2,6 +2,7 @@ version: '3.4'
 services:
   mongo_database:
     image: mongo:latest
+    container_name: mongodb
     restart: always
     ports:
       - '27017:27017'
@@ -13,11 +14,7 @@ services:
     build: .
     restart: always
     ports:
-      - '4000:4000'
-    volumes:
-      - .:/usr/src/app
-      - /usr/src/app/node_modules
-    command: nmp run dev
+      - '3000:3000'
     env_file:
       - .env
     depends_on:
@@ -27,16 +24,22 @@ services:
   nginx:
     image: nginx
     ports:
-      - "8080:8080"
+      - "80:8080"
     volumes:
       - ./nginx/nginx.conf:/etc/nginx/nginx.conf:ro
+    networks:
+      - nest-mongo-app
   typesense:
     image: typesense/typesense:0.21.0
+    container_name: typesense
     entrypoint: sh -c "/opt/typesense-server --data-dir /data --api-key=local-typesense-api-key --enable-cors"
     ports:
       - "8108:8108"
     volumes:
       - typesense-data:/data
+    networks:
+      - nest-mongo-app
+
 networks:
   nest-mongo-app:
     driver: bridge
